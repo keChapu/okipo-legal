@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>おきポ - プライバシーポリシー・利用規約</title>
+<style>
+  :root {
+    --bg: #F2F4F8;
+    --surface: #FFFFFF;
+    --ink: #1C2230;
+    --ink-muted: #5B6478;
+    --accent: #C8631E;
+    --accent-soft: #C8631E1a;
+    --line: #DCE1EA;
+    --shadow: 0 1px 2px rgba(28,34,48,0.04), 0 8px 24px rgba(28,34,48,0.05);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #11141C;
+      --surface: #181C26;
+      --ink: #E8EAF0;
+      --ink-muted: #99A1B5;
+      --accent: #F0964F;
+      --accent-soft: #F0964F22;
+      --line: #2A2F3C;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 24px rgba(0,0,0,0.35);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-sans-serif, -apple-system, "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .heading-face {
+    font-family: ui-serif, "Hiragino Mincho ProN", "Yu Mincho", Georgia, serif;
+  }
+
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 20px;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .brand-mark {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border-radius: 7px;
+    background: var(--accent);
+    color: white;
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .brand-sub {
+    color: var(--ink-muted);
+    font-size: 12px;
+    font-weight: 400;
+  }
+  .doc-nav {
+    display: flex;
+    gap: 4px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px;
+    box-shadow: var(--shadow);
+  }
+  .doc-nav a {
+    appearance: none;
+    border: none;
+    background: transparent;
+    color: var(--ink-muted);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  .doc-nav a:hover { color: var(--ink); }
+  .doc-nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  main {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 48px 20px 120px;
+  }
+
+  .doc-header {
+    margin-bottom: 40px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid var(--line);
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+  h1.doc-title {
+    font-size: clamp(26px, 4vw, 34px);
+    line-height: 1.3;
+    margin: 0 0 10px;
+    text-wrap: balance;
+  }
+  .doc-meta {
+    color: var(--ink-muted);
+    font-size: 13px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  section.clause {
+    margin: 0 0 36px;
+  }
+  section.clause:last-child { margin-bottom: 0; }
+
+  .clause-heading {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin: 0 0 14px;
+  }
+  .clause-number {
+    font-variant-numeric: tabular-nums;
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+    min-width: 1.6em;
+  }
+  h2.clause-title {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.5;
+    text-wrap: balance;
+  }
+
+  .clause-body {
+    margin-left: calc(1.6em + 12px);
+    max-width: 62ch;
+  }
+  .clause-body p { margin: 0 0 14px; }
+  .clause-body p:last-child { margin-bottom: 0; }
+  .clause-body ul {
+    margin: 0 0 14px;
+    padding-left: 1.2em;
+  }
+  .clause-body li { margin-bottom: 6px; }
+  .clause-body li:last-child { margin-bottom: 0; }
+
+  .callout {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    font-size: 14.5px;
+  }
+  .callout strong { color: var(--accent); }
+
+  .table-wrap {
+    overflow-x: auto;
+    margin: 16px 0;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    background: var(--surface);
+  }
+  caption {
+    text-align: left;
+    font-size: 12.5px;
+    color: var(--ink-muted);
+    padding: 10px 14px 0;
+  }
+  th, td {
+    padding: 9px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+    font-variant-numeric: tabular-nums;
+  }
+  thead th {
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    font-weight: 600;
+    background: color-mix(in srgb, var(--accent) 6%, var(--surface));
+  }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .contact-card {
+    margin-top: 8px;
+    padding: 16px 18px;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+  }
+  .contact-card dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 14px;
+    margin: 0;
+    font-size: 14px;
+  }
+  .contact-card dt { color: var(--ink-muted); }
+  .contact-card dd { margin: 0; font-variant-numeric: tabular-nums; }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--line);
+    margin: 56px 0;
+  }
+
+  @media (max-width: 560px) {
+    .doc-nav a { padding: 6px 10px; font-size: 12.5px; }
+    .clause-body { margin-left: 0; }
+    .clause-heading { flex-direction: column; gap: 2px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand">
+    <span class="brand-mark">起</span>
+    おきポ <span class="brand-sub">法的情報</span>
+  </div>
+  <nav class="doc-nav">
+    <a href="#privacy">プライバシーポリシー</a>
+    <a href="#terms">利用規約</a>
+  </nav>
+</div>
+
+<main>
+
+  <article id="privacy">
+    <header class="doc-header">
+      <span class="eyebrow heading-face">Privacy Policy</span>
+      <h1 class="doc-title heading-face">プライバシーポリシー</h1>
+      <p class="doc-meta">制定日: 2026年7月7日　/　運営: おきポ運営事務局</p>
+    </header>
+
+    <p style="max-width:62ch; margin-bottom:32px; color:var(--ink-muted)">
+      おきポ運営事務局（以下「当方」）は、当方が提供するアプリ「おきポ」（以下「本アプリ」）における利用者情報の取り扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。
+    </p>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">1</span>
+        <h2 class="clause-title">取得する情報と保存場所</h2>
+      </div>
+      <div class="clause-body">
+        <p><strong>1.1 端末内にのみ保存する情報（外部への送信は行いません）</strong><br>
+        本アプリの以下の情報は、利用者の端末内（UserDefaults）にのみ保存され、当方を含む第三者のサーバーに送信されることはありません。</p>
+        <ul>
+          <li>累計ポイント、連続起床日数、起床回数などの進捗データ</li>
+          <li>称号の所持状況、実績（スヌーズ回数・早起き回数など）の統計</li>
+          <li>ガチャの利用状況、ガチャ券の枚数</li>
+          <li>開発者への寄付（ポイント消費）の履歴</li>
+          <li>アラームの設定内容（時刻・繰り返し曜日・ラベル）</li>
+        </ul>
+
+        <p><strong>1.2 CloudKit（Apple提供）を通じて保存・共有される情報</strong><br>
+        本アプリの「フレンド機能」は、Appleが提供するCloudKitサービスを利用します。フレンド機能の利用にあたり、以下の情報がAppleのサーバー（CloudKit Public Database）に保存されます。</p>
+        <ul>
+          <li>ランダムに生成された12桁の「フレンドコード」</li>
+          <li>表示名</li>
+          <li>起床回数・連続起床日数（フレンドとの比較表示のため）</li>
+          <li>フレンド招待の送信・承認状況</li>
+        </ul>
+        <div class="callout">
+          <strong>重要:</strong> CloudKitのPublic Databaseに保存される上記情報は、該当のフレンドコードを知っている第三者であれば誰でも読み取ることができる設計になっています。フレンドコードは他人に安易に共有しないことをおすすめします。
+        </div>
+        <p>本アプリはCloudKitの利用にあたり、Appleが管理するiCloudアカウントに紐づく識別子を技術的に利用しますが、氏名・メールアドレスなど、iCloudアカウントに登録された個人情報を当方が直接取得することはありません。</p>
+
+        <p><strong>1.3 通知機能について</strong><br>
+        本アプリのアラーム機能は、端末内で完結するローカル通知（UNUserNotificationCenter）を使用します。この通知に関連して外部サーバーへ情報が送信されることはありません。</p>
+
+        <p><strong>1.4 広告について</strong><br>
+        本ポリシー作成時点では、本アプリに広告SDKは組み込まれていません。将来的に広告を導入する場合、広告識別子（IDFA）等の取り扱いが必要になる可能性があります。その際は、Appleの定めるApp Tracking Transparency（ATT）に基づく同意取得を行うとともに、本ポリシーを改定し、利用する広告事業者・取得する情報の範囲を明記します。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">2</span>
+        <h2 class="clause-title">利用目的</h2>
+      </div>
+      <div class="clause-body">
+        <p>取得した情報は、以下の目的でのみ利用します。</p>
+        <ul>
+          <li>本アプリの機能（ポイント管理、ガチャ、称号、フレンド機能、寄付機能など）を提供するため</li>
+          <li>フレンド機能における他の利用者との情報共有（1.2に記載の範囲に限る）のため</li>
+        </ul>
+        <p>取得した情報を、本ポリシーに定める目的以外で利用したり、第三者に販売したりすることはありません（将来的に広告SDKを導入する場合、当該広告事業者への提供が生じ得ることは1.4のとおりです）。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">3</span>
+        <h2 class="clause-title">データの保存期間・削除</h2>
+      </div>
+      <div class="clause-body">
+        <ul>
+          <li>端末内にのみ保存される情報（1.1）は、本アプリを削除することで消去されます。</li>
+          <li>CloudKit上に保存される情報（1.2）の削除をご希望の場合は、本ポリシー末尾のお問い合わせ先までフレンドコードを添えてご連絡ください。合理的な範囲で削除対応いたします。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">4</span>
+        <h2 class="clause-title">お子様の利用について</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリは、特定の年齢層を対象とした設計は行っておりませんが、対価の伴わないポイント制のみを扱っており、実際の金銭のやり取りは発生しません（詳細は利用規約をご確認ください）。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">5</span>
+        <h2 class="clause-title">本ポリシーの変更</h2>
+      </div>
+      <div class="clause-body">
+        <p>本ポリシーの内容は、法令の改正や本アプリの機能追加・変更に応じて、予告なく変更されることがあります。変更後のポリシーは、本アプリ内または本ポリシーの掲載ページに掲示した時点から効力を生じるものとします。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">6</span>
+        <h2 class="clause-title">お問い合わせ先</h2>
+      </div>
+      <div class="clause-body">
+        <div class="contact-card">
+          <dl>
+            <dt>運営者</dt><dd>おきポ運営事務局</dd>
+            <dt>連絡先</dt><dd>aioaioaiorick@gmail.com</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </article>
+
+  <hr class="divider" />
+
+  <article id="terms">
+    <header class="doc-header">
+      <span class="eyebrow heading-face">Terms of Service</span>
+      <h1 class="doc-title heading-face">利用規約</h1>
+      <p class="doc-meta">制定日: 2026年7月7日　/　運営: おきポ運営事務局</p>
+    </header>
+
+    <p style="max-width:62ch; margin-bottom:32px; color:var(--ink-muted)">
+      この利用規約（以下「本規約」）は、おきポ運営事務局（以下「当方」）が提供するアプリ「おきポ」（以下「本アプリ」）の利用条件を定めるものです。利用者は、本アプリをダウンロード・利用した時点で本規約に同意したものとみなします。
+    </p>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">1</span>
+        <h2 class="clause-title">サービス内容</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリは、以下の機能を無料で提供する目覚ましアプリです。</p>
+        <ul>
+          <li>アラームの設定・通知機能</li>
+          <li>起床の確認によるポイントの付与機能</li>
+          <li>ポイントを消費する、またはガチャ券・広告視聴によるガチャ機能</li>
+          <li>称号の収集機能</li>
+          <li>他の利用者との「フレンド」機能</li>
+          <li>貯めたポイントを消費する寄付機能</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">2</span>
+        <h2 class="clause-title">アラーム機能に関する重要な注意事項・免責事項</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリのアラーム機能は、iOS標準のローカル通知機能を利用しています。この方式には以下の技術的な制約があり、これらに起因して利用者が起床できなかった場合について、当方は一切の責任を負いません。</p>
+        <ul>
+          <li>端末がマナーモード・サイレントモードに設定されている場合、通知音が鳴らない、または鳴りにくいことがあります</li>
+          <li>通知音は端末の仕様上、一定時間（数秒〜十数秒程度）で自動的に停止し、鳴り続けることはありません</li>
+          <li>端末の電源が切れている、機内モードである、OSの不具合、通信環境等、当方の管理が及ばない要因により通知が正常に届かない場合があります</li>
+        </ul>
+        <div class="callout">
+          本アプリは補助的な目覚まし手段としてご利用いただくものであり、遅刻・欠席等により生じた損害について、当方はその原因の如何を問わず責任を負いかねます。重要な予定がある場合は、本アプリ以外の目覚まし手段も併用することを強く推奨します。
+        </div>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">3</span>
+        <h2 class="clause-title">ポイント・ガチャ券について</h2>
+      </div>
+      <div class="clause-body">
+        <ul>
+          <li>本アプリ内で付与・消費される「ポイント」および「ガチャ券」は、本アプリ内でのみ利用可能な仮想的な数値であり、現金・金券・暗号資産その他の資産的価値を有するものではありません。</li>
+          <li>ポイント・ガチャ券は、換金・払い戻し・他者への譲渡・売買を行うことはできません。</li>
+          <li>当方が本アプリの提供を終了する場合、または利用者がアカウント情報（フレンドコード等）を失った場合であっても、ポイント・ガチャ券その他の保有データについて、当方はいかなる補償も行いません。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">4</span>
+        <h2 class="clause-title">ガチャの排出確率について</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリのガチャ機能における排出確率は、以下のとおりです（消費形態が広告視聴・ポイント消費・ガチャ券のいずれであっても、確率は共通です）。</p>
+
+        <div class="table-wrap">
+          <table>
+            <caption>通常時の排出確率</caption>
+            <thead><tr><th>等級</th><th>確率</th><th>景品</th></tr></thead>
+            <tbody>
+              <tr><td>小吉</td><td>62.9%</td><td>称号（ハズレ専用称号からランダム）</td></tr>
+              <tr><td>吉</td><td>20%</td><td>称号（吉専用称号からランダム）</td></tr>
+              <tr><td>中吉</td><td>10%</td><td>曲（フリーBGM）</td></tr>
+              <tr><td>大吉</td><td>6%</td><td>アイコン</td></tr>
+              <tr><td>超大吉</td><td>1%</td><td>100ポイント</td></tr>
+              <tr><td>超超大吉</td><td>0.1%</td><td>1000ポイント</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <caption>1日のうち1〜3回目のみ適用される確率（4回目以降は通常時の確率に戻ります）</caption>
+            <thead><tr><th>等級</th><th>確率</th></tr></thead>
+            <tbody>
+              <tr><td>小吉</td><td>52.9%</td></tr>
+              <tr><td>吉</td><td>30%</td></tr>
+              <tr><td>中吉</td><td>10%</td></tr>
+              <tr><td>大吉</td><td>6%</td></tr>
+              <tr><td>超大吉</td><td>1%</td></tr>
+              <tr><td>超超大吉</td><td>0.1%</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>上記確率は、本アプリのアップデートにより変更される場合があります。変更時は本規約を改定し、変更後の確率を明示します。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">5</span>
+        <h2 class="clause-title">開発者への寄付機能について</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリの寄付機能は、利用者が本アプリ内で貯めたポイントを消費するものであり、<strong>実際の金銭のやり取りは一切発生しません</strong>。本機能はApp Store課金（アプリ内課金）を利用したチップ機能ではなく、無料で獲得したポイントの使い道の一つとして提供するものです。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">6</span>
+        <h2 class="clause-title">フレンド機能について</h2>
+      </div>
+      <div class="clause-body">
+        <ul>
+          <li>フレンド機能を利用すると、フレンドコード・表示名・起床回数・連続起床日数が、CloudKitのPublic Databaseを通じて、当該フレンドコードを知る第三者に公開される場合があります（詳細はプライバシーポリシーをご確認ください）。</li>
+          <li>自己申告による招待の不正な繰り返し（いわゆる自演招待・サクラアカウントの作成等）、その他不正にポイント・ガチャ券を取得する行為を禁止します。当方が不正行為を確認した場合、事前の通知なく当該利用者の機能利用を制限することがあります。</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">7</span>
+        <h2 class="clause-title">禁止事項</h2>
+      </div>
+      <div class="clause-body">
+        <p>利用者は、本アプリの利用にあたり、以下の行為を行ってはなりません。</p>
+        <ul>
+          <li>本アプリの不具合・脆弱性を利用して、不正にポイント・ガチャ券・称号等を取得する行為</li>
+          <li>本アプリのリバースエンジニアリング、逆コンパイル、逆アセンブルその他の解析行為</li>
+          <li>自動化ツール・ボット等を用いた不正なアクセス・操作</li>
+          <li>他の利用者への迷惑行為、フレンド機能を利用した嫌がらせ行為</li>
+          <li>その他、当方が不適切と判断する行為</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">8</span>
+        <h2 class="clause-title">知的財産権</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリに関する著作権その他の知的財産権は、当方または正当な権利を有する第三者に帰属します。本規約に基づく本アプリの利用許諾は、これらの権利の譲渡を意味するものではありません。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">9</span>
+        <h2 class="clause-title">サービスの変更・中断・終了</h2>
+      </div>
+      <div class="clause-body">
+        <p>当方は、利用者への事前の通知なく、本アプリの内容を変更し、または提供を中断・終了することができるものとします。これにより利用者に生じた損害について、当方は責任を負いません。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">10</span>
+        <h2 class="clause-title">免責事項</h2>
+      </div>
+      <div class="clause-body">
+        <p>本アプリは現状有姿で提供されるものであり、当方は本アプリの内容についていかなる保証も行いません。本アプリの利用により利用者に生じた損害について、当方に故意または重過失がある場合を除き、当方は責任を負いません。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">11</span>
+        <h2 class="clause-title">準拠法・管轄</h2>
+      </div>
+      <div class="clause-body">
+        <p>本規約の解釈にあたっては、日本法を準拠法とします。本アプリに関して当方と利用者との間で紛争が生じた場合には、当方所在地を管轄する裁判所を第一審の専属的合意管轄裁判所とします。</p>
+      </div>
+    </section>
+
+    <section class="clause">
+      <div class="clause-heading">
+        <span class="clause-number heading-face">12</span>
+        <h2 class="clause-title">お問い合わせ先</h2>
+      </div>
+      <div class="clause-body">
+        <div class="contact-card">
+          <dl>
+            <dt>運営者</dt><dd>おきポ運営事務局</dd>
+            <dt>連絡先</dt><dd>aioaioaiorick@gmail.com</dd>
+          </dl>
+        </div>
+      </div>
+    </section>
+  </article>
+
+</main>
+</body>
+</html>
